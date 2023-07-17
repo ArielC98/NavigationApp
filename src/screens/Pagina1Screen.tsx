@@ -1,12 +1,29 @@
-import React from 'react'
-import { Button, Text, View } from 'react-native'
-import { StackScreenProps } from '@react-navigation/stack';
+import React, { useEffect } from 'react'
+import { Button, Text, View, TouchableOpacity } from 'react-native'
+//import { StackScreenProps } from '@react-navigation/stack';
+import { DrawerScreenProps } from '@react-navigation/drawer';
 import { styles } from '../theme/appTheme';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
-interface Props extends StackScreenProps<any, any> { }; //Se extiende porque son las propiedades por defecto que tiene un StackScreen, pero tambien se le puede agregar nuevas
+
+
+
+//interface Props extends StackScreenProps<any, any> { }; 
+interface Props extends DrawerScreenProps<any, any> { };
 
 export const Pagina1Screen = ({ navigation }: Props) => {
+
+  useEffect(()=>{
+
+    navigation.setOptions({
+      headerLeft:()=>(
+        <Button
+          title='Menu'
+          onPress={()=>{navigation.toggleDrawer()}}
+        />
+      )
+    })
+
+  },[])
 
   return (
     <View style={styles.globalMargin}>
