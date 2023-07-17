@@ -12,19 +12,6 @@ interface Props extends DrawerScreenProps<any, any> { };
 
 export const Pagina1Screen = ({ navigation }: Props) => {
 
-  useEffect(()=>{
-
-    navigation.setOptions({
-      headerLeft:()=>(
-        <Button
-          title='Menu'
-          onPress={()=>{navigation.toggleDrawer()}}
-        />
-      )
-    })
-
-  },[])
-
   return (
     <View style={styles.globalMargin}>
       <Text style={styles.title}>Pagina 1 Screen</Text>
