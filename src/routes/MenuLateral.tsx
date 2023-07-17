@@ -4,8 +4,10 @@ import { StackNavigator } from './StackNavigator';
 import { SettingsScreen } from '../screens/SettingsScreen';
 import { Image, Text, useWindowDimensions, View, TouchableOpacity } from 'react-native';
 import { styles } from '../theme/appTheme';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const Drawer = createDrawerNavigator();
+
 
 export const MenuLateral = () => {
 
@@ -17,7 +19,7 @@ export const MenuLateral = () => {
       drawerContent={(props)=><MenuContent {...props}/>}
     >
       <Drawer.Screen name="StackNavigator" component={StackNavigator} options={{ headerShown: false }} />
-      <Drawer.Screen name="SettingsScreen" component={SettingsScreen} options={{ headerShown: true }} />
+      <Drawer.Screen name="SettingsScreen" component={SettingsScreen} options={{ headerShown: false }} />
     </Drawer.Navigator>
   );
 }
