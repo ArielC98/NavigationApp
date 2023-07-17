@@ -31,5 +31,15 @@ export const styles = StyleSheet.create({
   avatarContainer:{
     alignItems:'center',
     marginTop:15
+  },
+  menuContainer:{
+    marginVertical:20,
+    marginHorizontal:30,
+  },
+  menuItem:{
+    marginVertical:10
+  },
+  menuItemText:{
+    fontSize:20
   }
 });
