@@ -22,7 +22,6 @@ const TabsAndroid = () => {
   return (
     <AndroidBottomTab.Navigator
       sceneAnimationEnabled={true}
-      initialRouteName='TopTabNavigator'
       barStyle={{
         backgroundColor:colores.primary
       }}
