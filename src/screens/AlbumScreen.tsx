@@ -3,8 +3,8 @@ import { Text, View } from 'react-native'
 
 export const AlbumScreen = () => {
   return (
-    <View>
-      <Text>Album Screen</Text>
+    <View style={{flex:1,justifyContent:"center",alignItems:'center'}}>
+      <Text style={{fontSize:25, fontWeight:'bold'}}>Album Screen</Text>
     </View>
   )
 }
