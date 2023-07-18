@@ -2,40 +2,48 @@ import React from 'react'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Tab1Screen } from '../screens/Tab1Screen';
-import { Tab2Screen } from '../screens/Tab2Screen';
 import { StackNavigator } from './StackNavigator';
 import { colores } from '../theme/appTheme';
 import { Platform, Text } from 'react-native';
 import { TopTabNavigator } from './TopTabNavigator';
+import { useTheme } from '@react-navigation/native';
 
 
 export const Tabs = () => {   //Renderizacion condicional
   return Platform.OS === 'ios'
-    ? <TabsIOS />
-    : <TabsAndroid />
+  ? <TabsIOS />
+  : <TabsAndroid />
 }
 
 const AndroidBottomTab = createMaterialBottomTabNavigator();
 
 const TabsAndroid = () => {
+  
+  const theme = useTheme();
+  // @ts-ignore solo esta vez porque solo asi funciona 
+  theme.colors.secondaryContainer='transparent';
 
   return (
     <AndroidBottomTab.Navigator
+      activeColor='white'
       sceneAnimationEnabled={true}
       barStyle={{
-        backgroundColor:colores.primary
+        backgroundColor:colores.primary,        
       }}
       screenOptions={({ route }) => ({
-        tabBarActiveTintColor: colores.primary,
+        
         tabBarStyle: {
           borderTopColor: colores.primary,
           borderTopWidth: 0,
-          elevation: 0
+          elevation:0
+          
+        
         },
         tabBarLabelStyle: {
-          fontSize: 15
+          fontSize: 15,
         },
-        tabBarIcon: ({ color, focused }) => {
+        
+        tabBarIcon: ({ color }) => {
 
           let iconName: string = '';
           switch (route.name) {
@@ -54,7 +62,7 @@ const TabsAndroid = () => {
         }
       })}
     >
-      <AndroidBottomTab.Screen name="Tab1Screen" options={{ title: 'Tab 1' }} component={Tab1Screen} />
+      <AndroidBottomTab.Screen name="Tab1Screen" options={{ title: 'Tab 1'}} component={Tab1Screen}/>
       <AndroidBottomTab.Screen name="TopTabNavigator" options={{ title: 'Top Tab' }} component={TopTabNavigator} />
       <AndroidBottomTab.Screen name="StackNavigator" options={{ title: 'Stack' }} component={StackNavigator} />
     </AndroidBottomTab.Navigator>
