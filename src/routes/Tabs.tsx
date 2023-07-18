@@ -6,6 +6,7 @@ import { Tab2Screen } from '../screens/Tab2Screen';
 import { StackNavigator } from './StackNavigator';
 import { colores } from '../theme/appTheme';
 import { Platform, Text } from 'react-native';
+import { TopTabNavigator } from './TopTabNavigator';
 
 
 export const Tabs = () => {   //Renderizacion condicional
@@ -17,6 +18,7 @@ export const Tabs = () => {   //Renderizacion condicional
 const AndroidBottomTab = createMaterialBottomTabNavigator();
 
 const TabsAndroid = () => {
+
   return (
     <AndroidBottomTab.Navigator
       sceneAnimationEnabled={true}
@@ -40,8 +42,8 @@ const TabsAndroid = () => {
             case 'Tab1Screen':
               iconName = 'T1';
               break;
-            case 'Tab2Screen':
-              iconName = 'T2';
+            case 'TopTabNavigator':
+              iconName = 'TT';
               break;
             case 'StackNavigator':
               iconName = 'St';
@@ -53,7 +55,7 @@ const TabsAndroid = () => {
       })}
     >
       <AndroidBottomTab.Screen name="Tab1Screen" options={{ title: 'Tab 1' }} component={Tab1Screen} />
-      <AndroidBottomTab.Screen name="Tab2Screen" options={{ title: 'Tab 2' }} component={Tab2Screen} />
+      <AndroidBottomTab.Screen name="TopTabNavigator" options={{ title: 'Top Tab' }} component={TopTabNavigator} />
       <AndroidBottomTab.Screen name="StackNavigator" options={{ title: 'Stack' }} component={StackNavigator} />
     </AndroidBottomTab.Navigator>
   );
@@ -83,8 +85,8 @@ export const TabsIOS = () => {
             case 'Tab1Screen':
               iconName = 'T1';
               break;
-            case 'Tab2Screen':
-              iconName = 'T2';
+            case 'TopTabNavigator':
+              iconName = 'TT';
               break;
             case 'StackNavigator':
               iconName = 'St';
@@ -100,7 +102,7 @@ export const TabsIOS = () => {
     >
       {/* <Tab.Screen name="Tab1Screen" options={{title:'Tab 1', tabBarIcon:(props)=><Text style={{color:props.color}}>Icon</Text>}} component={Tab1Screen} /> */}
       <IOSBottomTab.Screen name="Tab1Screen" options={{ title: 'Tab 1' }} component={Tab1Screen} />
-      <IOSBottomTab.Screen name="Tab2Screen" options={{ title: 'Tab 2' }} component={Tab2Screen} />
+      <IOSBottomTab.Screen name="TopTabNavigator" options={{ title: 'Top Tab' }} component={TopTabNavigator} />
       <IOSBottomTab.Screen name="StackNavigator" options={{ title: 'Stack' }} component={StackNavigator} />
     </IOSBottomTab.Navigator>
   );
