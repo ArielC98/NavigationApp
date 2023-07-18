@@ -11,7 +11,8 @@ export const styles = StyleSheet.create({
   title:{
     fontSize: 30,
     color:'black',
-    marginBottom:10
+    marginVertical:10,
+    textAlign:'center'
   },
   botonGrande:{
     width:100,
@@ -46,4 +47,19 @@ export const styles = StyleSheet.create({
   menuItemText:{
     fontSize:20
   },
+  listaIconos:{
+    width:'100%',
+    height:400,
+    paddingLeft:23,
+    flexWrap:'wrap',
+    gap:18,
+    justifyContent:'center',
+    alignItems:'center'
+  },
+  nombreIcono:{
+    marginTop:60,
+    //backgroundColor:'red',
+    fontSize:25,
+    textAlign:'center'
+  }
 });
