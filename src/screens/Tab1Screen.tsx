@@ -48,7 +48,7 @@ export const Tab1Screen = () => {
 
   return (
     <View style={{ ...styles.globalMargin, flex: 1 }}>
-      <Text style={styles.title}>Iconos</Text>
+      <Text style={styles.title}>Icons</Text>
       <View style={styles.listaIconos}>
 
         {
