@@ -22,7 +22,7 @@ export const PersonaScreen = ({navigation,route}:Props) => {
   
   return (
     <View style={styles.globalMargin}>
-      <Text style={styles.title}>
+      <Text style={styles.personContent}>
         {
           JSON.stringify(params,null,3)
         }

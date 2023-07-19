@@ -53,7 +53,7 @@ export const Tab1Screen = () => {
 
         {
           icons.map((icon, index) =>
-            <TouchableOpacity onPress={() => setSelectedIcon(index)}>
+            <TouchableOpacity key={index} onPress={() => setSelectedIcon(index)}>
               <Icon name={icon.name} size={50} color={selectedIcon === index ? '#ff8000' : colores.primary} />
             </TouchableOpacity>
           )

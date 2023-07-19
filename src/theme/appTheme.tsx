@@ -1,7 +1,8 @@
 import { StyleSheet } from "react-native";
 
 export const colores={
-  primary:'#5856D6'
+  //primary:'#5856D6',
+  primary:'#8080ff'
 }
 
 export const styles = StyleSheet.create({
@@ -13,6 +14,9 @@ export const styles = StyleSheet.create({
     color:'black',
     marginVertical:10,
     textAlign:'center'
+  },
+  personContent:{
+    fontSize:30,
   },
   botonGrande:{
     width:100,
@@ -42,7 +46,9 @@ export const styles = StyleSheet.create({
     marginHorizontal:30,
   },
   menuItem:{
-    marginVertical:10
+    marginVertical:10,
+    flexDirection:'row',
+    gap:10
   },
   menuItemText:{
     fontSize:20

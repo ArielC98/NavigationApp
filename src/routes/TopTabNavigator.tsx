@@ -5,7 +5,7 @@ import { ContactsScreen } from '../screens/ContactsScreen';
 import { AlbumScreen } from '../screens/AlbumScreen';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { colores } from '../theme/appTheme';
-import { Text } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -37,17 +37,17 @@ export const TopTabNavigator = () => {
             let iconName: string = '';
             switch (route.name) {
               case 'Chat':
-                iconName = 'Ch';
+                iconName = 'chatbox-ellipses-outline';
                 break;
               case 'Contacts':
-                iconName = 'Co';
+                iconName = 'people-outline';
                 break;
               case 'Album':
-                iconName = 'Al';
+                iconName = 'images-outline';
                 break;
             }
   
-            return <Text style={{ color }}>{iconName}</Text> //solo se pone el color porque es igual a color: color(props) pero se pone asi para que en EM6 no sea redundante
+            return <Icon style={{marginLeft:3}} name={iconName} size={20} color={color}/> //solo se pone el color porque es igual a color: color(props) pero se pone asi para que en EM6 no sea redundante
           }
         })
       }
