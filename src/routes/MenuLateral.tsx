@@ -19,8 +19,8 @@ export const MenuLateral = () => {
       screenOptions={{ drawerType: (width >= 768 ? "permanent" : "front") }}
       drawerContent={(props)=><MenuContent {...props}/>}
     >
-      <Drawer.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
       <Drawer.Screen name="SettingsScreen" component={SettingsScreen} options={{ headerShown: false }} />
+      <Drawer.Screen name="Tabs" component={Tabs} options={{ headerShown: false }} />
     </Drawer.Navigator>
   );
 }

@@ -10,14 +10,14 @@ import { AuthProvider } from './src/context/AuthContext';
 
 const App = () => {
   return (
-    <AppState>
-      <NavigationContainer>
+    <NavigationContainer>
+      <AppState>
         {/* <StackNavigator/> */}
         {/* <MenuLateralBasico/> */}
         <MenuLateral />
         {/* <Tabs/> */}
-      </NavigationContainer>
-    </AppState> 
+      </AppState>
+    </NavigationContainer>
   )
 }
 
