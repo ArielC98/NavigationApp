@@ -1,4 +1,5 @@
 import { createContext, useReducer } from "react";
+import { authReducer } from "./AuthReducer";
 
 // Definir como luce, que informacion tendre aqui
 export interface AuthState {
@@ -26,10 +27,16 @@ export const AuthContext = createContext({} as AuthContextProps);
 //Componente que es el proveedor del estado
 export const AuthProvider = ({ children }: any) => {
 
+  const [authState, dispatch] = useReducer(authReducer, authInitalState);
+
+  const signIn = () => {
+    dispatch({type:'signIn'})
+  }
+
   return (
     <AuthContext.Provider value={{
-      authState: authInitalState,
-      signIn: () => { }
+      authState, //Es igual a authState: authState pero EM6 evita la redundancia
+      signIn
     }}>
       {children}
     </AuthContext.Provider>
