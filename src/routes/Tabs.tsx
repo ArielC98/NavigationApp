@@ -32,13 +32,10 @@ const TabsAndroid = () => {
         backgroundColor: colores.primary,
       }}
       screenOptions={({ route }) => ({
-
         tabBarStyle: {
           borderTopColor: colores.primary,
           borderTopWidth: 0,
-          elevation: 0
-
-
+          elevation: 0,
         },
         tabBarLabelStyle: {
           fontSize: 15,
@@ -59,7 +56,7 @@ const TabsAndroid = () => {
               break;
           }
 
-          return <Icon name={iconName} size={25} color={color} />
+          return <Icon name={iconName} size={25} color={color}/>
         }
       })}
     >
