@@ -10,7 +10,6 @@ export const authReducer = (state: AuthState, action: AuthAction): AuthState => 
         isLoggedIn: true,
         username: 'not registered yet'
       }
-
     default:
       return state;
   }

@@ -15,6 +15,7 @@ export const TopTabNavigator = () => {
 
   return (
     <Tab.Navigator
+      initialRouteName='Contacts'
       style={{
         paddingTop
       }}
