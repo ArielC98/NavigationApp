@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Button, Text, View, TouchableOpacity } from 'react-native'
 //import { StackScreenProps } from '@react-navigation/stack';
 import { DrawerScreenProps } from '@react-navigation/drawer';
 import { colores, styles } from '../theme/appTheme';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { AuthContext } from '../context/AuthContext';
 
 
 
@@ -11,6 +12,8 @@ import Icon from 'react-native-vector-icons/Ionicons';
 interface Props extends DrawerScreenProps<any, any> { };
 
 export const Pagina1Screen = ({ navigation }: Props) => {
+
+  const {changeUsername} = useContext(AuthContext);
 
   useEffect(()=>{
 

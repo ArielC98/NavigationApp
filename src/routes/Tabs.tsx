@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Tab1Screen } from '../screens/Tab1Screen';
@@ -8,6 +8,7 @@ import { Platform, Text } from 'react-native';
 import { TopTabNavigator } from './TopTabNavigator';
 import { useTheme } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { AuthContext } from '../context/AuthContext';
 
 
 export const Tabs = () => {   //Renderizacion condicional
@@ -19,6 +20,8 @@ export const Tabs = () => {   //Renderizacion condicional
 const AndroidBottomTab = createMaterialBottomTabNavigator();
 
 const TabsAndroid = () => {
+
+  const {authState:{isLoggedIn}} = useContext(AuthContext);
 
   const theme = useTheme();
   // @ts-ignore solo esta vez porque solo asi funciona 
@@ -57,13 +60,13 @@ const TabsAndroid = () => {
               break;
           }
 
-          return <Icon name={iconName} size={25} color={color}/>
+          return <Icon name={iconName} size={25} color={color} />
         }
       })}
     >
       <AndroidBottomTab.Screen name="Tab1Screen" options={{ title: 'Icons' }} component={Tab1Screen} />
       <AndroidBottomTab.Screen name="TopTabNavigator" options={{ title: 'Album' }} component={TopTabNavigator} />
-      <AndroidBottomTab.Screen name="StackNavigator" options={{ title: 'Stack' }} component={StackNavigator} />
+      {isLoggedIn ? <AndroidBottomTab.Screen name="StackNavigator" options={{ title: 'Stack' }} component={StackNavigator} /> : <></>}
     </AndroidBottomTab.Navigator>
   );
 }

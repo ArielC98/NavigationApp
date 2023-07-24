@@ -21,6 +21,7 @@ export interface AuthContextProps {
   signIn: () => void;
   signOut: () => void;
   changeFavoriteIcon: (iconName: string) => void;
+  changeUsername: (newUsername: string) => void;
 }
 
 //Crear el contexto
@@ -42,12 +43,17 @@ export const AuthProvider = ({ children }: any) => {
     dispatch({type:'changeFavIcon', payload:iconName})
   }
 
+  const changeUsername = (newUsername:string) => {
+    dispatch({type:'changeUsername', payload:newUsername})
+  }
+
   return (
     <AuthContext.Provider value={{
       authState, //Es igual a authState: authState pero EM6 evita la redundancia
       signIn,
       signOut,
-      changeFavoriteIcon
+      changeFavoriteIcon,
+      changeUsername
     }}>
       {children}
     </AuthContext.Provider>
