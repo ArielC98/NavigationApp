@@ -61,7 +61,7 @@ export const Tab1Screen = () => {
 
         <TouchableIcon name='airplane-outline'/>
         <TouchableIcon name='tennisball-outline'/>
-        <TouchableIcon name='add-icon'/>
+        <TouchableIcon name='add-outline'/>
         <TouchableIcon name='wine-outline'/>
         <TouchableIcon name='trash-outline'/>
         <TouchableIcon name='thumbs-up-outline'/>

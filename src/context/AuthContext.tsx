@@ -19,6 +19,7 @@ export const authInitalState: AuthState = {
 export interface AuthContextProps {
   authState: AuthState;
   signIn: () => void;
+  signOut: () => void;
   changeFavoriteIcon: (iconName: string) => void;
 }
 
@@ -33,6 +34,9 @@ export const AuthProvider = ({ children }: any) => {
   const signIn = () => {
     dispatch({type:'signIn'});
   }
+  const signOut = () => {
+    dispatch({type:'signOut'});
+  }
 
   const changeFavoriteIcon = (iconName:string) => {
     dispatch({type:'changeFavIcon', payload:iconName})
@@ -42,6 +46,7 @@ export const AuthProvider = ({ children }: any) => {
     <AuthContext.Provider value={{
       authState, //Es igual a authState: authState pero EM6 evita la redundancia
       signIn,
+      signOut,
       changeFavoriteIcon
     }}>
       {children}
